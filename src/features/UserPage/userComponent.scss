@@ -1,0 +1,62 @@
+.userListView {
+    display: block;
+    border: 1px solid green;
+    margin: 0 auto;
+    width: 65%;
+}
+
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+
+.card {
+    background-color: lightgray;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.user {
+    width: 50%;
+    margin: 0 auto;
+}
+
+input {
+    padding: 7px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.addUserBtn {
+    margin: 0px auto;
+    text-align: center;
+}
+
+.addUserBtn button{
+    margin: 12px auto;
+}
+
+.userForm {
+    margin: 20px 0px;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 11px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }

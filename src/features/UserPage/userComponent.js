@@ -56,7 +56,7 @@ const UserComponent = () => {
     }
 
     const appendInput = () => {
-        setAddUserBtnDisabled(true);        
+        setAddUserBtnDisabled(true);
         const newUserInput = {
             id: users.length + 1,
             name: '',
@@ -67,26 +67,32 @@ const UserComponent = () => {
 
     const setAddUserBtn = () => {
         const isUserFieldEmpty = some(users, user => isEmpty(user.name) || isEmpty(user.email));
-        if((isUserFieldEmpty && addUserBtnDisabled) || (!isUserFieldEmpty && !addUserBtnDisabled)) {
+        if ((isUserFieldEmpty && addUserBtnDisabled) || (!isUserFieldEmpty && !addUserBtnDisabled)) {
             return;
         }
-        else if((!isUserFieldEmpty && addUserBtnDisabled) || (isUserFieldEmpty && !addUserBtnDisabled)) {
+        else if ((!isUserFieldEmpty && addUserBtnDisabled) || (isUserFieldEmpty && !addUserBtnDisabled)) {
             setAddUserBtnDisabled(false);
         }
     }
 
     return (
-        <div>
-            <form>
-                <UsersList users={users} handleNameFieldChange={handleNameFieldChange} handleEmailFieldChange={handleEmailFieldChange} />
-                <button onClick={appendInput} disabled={addUserBtnDisabled}>Add User</button>
-            </form>
+        <div class="card">
+            <div class="userListView">
+                <form>
+                    <div class="userForm">
+                        <UsersList users={users} handleNameFieldChange={handleNameFieldChange} handleEmailFieldChange={handleEmailFieldChange} />
+                        <div class="addUserBtn">
+                            <button onClick={appendInput} disabled={addUserBtnDisabled}>Add New User</button>
+                        </div>
+                    </div>
+                </form>
 
-            {loading && (
-                <div className="FormOverlay">
-                    <Spinner />
-                </div>
-            )}
+                {loading && (
+                    <div className="FormOverlay">
+                        <Spinner />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
